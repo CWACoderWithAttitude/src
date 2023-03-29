@@ -1,0 +1,35 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+//https://manfredmlange.medium.com/creating-a-dev-container-for-typescript-and-vs-code-part-1-e653bb95c27f
+{
+  "name": "Rule of Acquisiton",
+  "dockerComposeFile": ["docker-compose.yml"],
+  // The name of the following service has to match one of the services in docker-compose.yml
+  "service": "devcontainer",
+  "workspaceFolder": "/src",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "ms-vsliveshare.vsliveshare",
+        "dbaeumer.vscode-eslint",
+        "wesbos.theme-cobalt2",
+        "rangav.vscode-thunder-client",
+        "humao.rest-client",
+        "architect.architect",
+        "asciidoctor.asciidoctor-vscode",
+        "svelte.svelte-vscode",
+        "ardenivanov.svelte-intellisense",
+        "SeyyedKhandon.gpack",
+        "redhat.vscode-yaml",
+        "PKief.material-icon-theme"
+      ]
+    }
+  },
+
+  "shutdownAction": "stopCompose",
+  "remoteUser": "node",
+  // update npm ==> sveltekit
+  // install deps for arc.codes app
+  "postCreateCommand": "npm install npm@latest && npm install"
+}
